@@ -25,6 +25,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
@@ -82,6 +87,7 @@ a {
     color: var(--muted);
     font-size: 1.08rem;
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 .hero-actions {
@@ -138,6 +144,9 @@ a {
     margin-top: 22px;
     color: var(--muted);
     font-size: 0.95rem;
+}
+.proof span {
+    min-width: 0;
 }
 
 .proof strong {
@@ -366,6 +375,10 @@ a {
 }
 
 @media (max-width: 960px) {
+    .page-shell {
+        width: min(100% - 28px, 1160px);
+    }
+
     .hero,
     .cta,
     .two-col,
@@ -374,8 +387,20 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        gap: 20px;
+    }
+
     .visual-panel {
         min-height: auto;
+    }
+
+    .product-image {
+        min-height: 360px;
+    }
+
+    .cta {
+        gap: 18px;
     }
 }
 
@@ -383,6 +408,7 @@ a {
     .page-shell {
         width: min(100% - 20px, 1160px);
         padding-top: 16px;
+        padding-bottom: 36px;
     }
 
     .card,
@@ -392,12 +418,153 @@ a {
         border-radius: 24px;
     }
 
+    .hero {
+        gap: 18px;
+        padding: 8px 0 20px;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    .hero p,
+    .section-head p,
+    .product-item p,
+    .price-box p,
+    .cta-copy p {
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+
+    .hero-actions,
+    .proof {
+        gap: 12px;
+    }
+
+    .hero-actions .btn-primary,
+    .cta-copy .btn-light {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .btn {
+        min-height: 58px;
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .visual-panel {
+        padding: 14px;
     }
 
     .product-image {
-        min-height: auto;
+        min-height: 280px;
+        border-radius: 18px;
+    }
+
+    .stats {
+        margin-top: 8px;
+    }
+
+    .card,
+    .product-item,
+    .price-box {
+        padding: 20px;
+    }
+
+    .section {
+        margin-top: 22px;
+    }
+
+    .section-head h2 {
+        font-size: 2rem;
+    }
+
+    .checklist li {
+        gap: 10px;
+        line-height: 1.45;
+    }
+
+    .check {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .product-grid {
+        gap: 16px;
+    }
+
+    .price {
+        font-size: 3rem;
+    }
+
+    .note {
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-shell {
+        width: calc(100% - 16px);
+        padding-top: 12px;
+        padding-bottom: 28px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .eyebrow {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 12px;
+        line-height: 1.3;
+        white-space: normal;
+    }
+
+    .card,
+    .visual-panel,
+    .cta,
+    .product-item,
+    .price-box {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .visual-panel::before {
+        width: 120px;
+        height: 120px;
+        right: -30px;
+        top: -24px;
+    }
+
+    .visual-panel::after {
+        width: 100px;
+        height: 100px;
+        left: -20px;
+        bottom: 10px;
+    }
+
+    .product-image {
+        min-height: 220px;
+    }
+
+    .stat-value {
+        font-size: 2.1rem;
+    }
+
+    .section-head h2 {
+        font-size: 1.75rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
     }
 }
 </style>
